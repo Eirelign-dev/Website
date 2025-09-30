@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120">
+  <defs>
+    <linearGradient id="stick" x1="0" x2="1">
+      <stop offset="0%" stop-color="#caa46a"/>
+      <stop offset="100%" stop-color="#a7773f"/>
+    </linearGradient>
+    <pattern id="stripe" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="8" height="8" fill="transparent"/>
+      <rect width="4" height="8" fill="#d44"/>
+    </pattern>
+  </defs>
+  <g opacity="0.18" stroke-linecap="round">
+    <g transform="translate(20,20) rotate(35 40 40)">
+      <rect x="-6" y="0" rx="3" ry="3" width="12" height="100" fill="url(#stick)" stroke="#8f632f"/>
+      <rect x="-6" y="8" width="12" height="16" fill="url(#stripe)" opacity="0.35"/>
+    </g>
+    <g transform="translate(20,20) rotate(-35 60 60)">
+      <rect x="-6" y="0" rx="3" ry="3" width="12" height="100" fill="url(#stick)" stroke="#8f632f"/>
+      <rect x="-6" y="8" width="12" height="16" fill="url(#stripe)" opacity="0.35"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Éirelign — Your Way</title>
+  <link rel="stylesheet" href="assets/css/styles.css"/>
+</head>
+<body>
+  
+<header class="header compact" role="banner">
+  <div class="container header-inner">
+    <div class="actions">
+      <a href="cart.html" aria-label="View cart">🛒 Cart <span class="badge" data-cart-count>0</span></a>
+    </div>
+    <div class="brand-compact" aria-live="polite">
+      <div class="site-title">Éirelign</div>
+      <small>Dublin, Ireland. Est. 2025</small>
+      <div style="height:.25rem"></div>
+    </div>
+    <nav class="nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="collection.html">Collection</a>
+      <a href="your-way.html">Your Way</a>
+      <a href="tutorial.html">Tutorial</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+  </div>
+</header>
+
+  <main class="section">
+    <div class="container" style="display:grid; gap:1.25rem; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); align-items:start;">
+      <section>
+        <h1>Build it Your Way</h1>
+        <p class="meta">Choose colours, pattern, finish and optional engraving. Preview updates live — then add to cart. <strong>Price: €40</strong></p>
+        <form id="config-form" class="card" style="padding:1rem;">
+          <div style="display:grid; gap:1rem; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));">
+            <label>Primary colour<br><input type="color" name="primary" value="#00e0b8"/></label>
+            <label>Accent colour<br><input type="color" name="accent" value="#58a6ff"/></label>
+            <label>Pattern<br>
+              <select name="pattern">
+                <option value="none">None</option>
+                <option value="stripes">Subtle stripes</option>
+                <option value="speckles">Speckles</option>
+              </select>
+            </label>
+            <label>Finish<br>
+              <select name="finish">
+                <option value="matte">Matte</option>
+                <option value="gloss">Gloss</option>
+              </select>
+            </label>
+            <label style="grid-column: 1 / -1;">Engraving (optional, 16 chars)
+              <input type="text" name="engraving" placeholder="e.g., O'GRADY" maxlength="16" style="width:100%; padding:.6rem; border:1px solid var(--line); border-radius:10px;"/>
+              <div class="meta" style="margin-top:.25rem;">Allowed: letters, numbers, space, - . · <span id="engrave-count">0/16</span></div>
+            </label>
+          </div>
+          <div style="margin-top:1rem; display:flex; gap:.75rem; flex-wrap:wrap; align-items:center;">
+            <button id="btn-add" style="padding:.8rem 1rem; border-radius:10px; border:1px solid var(--line); background: var(--brand-2); color:#fff; font-weight:800; cursor:pointer;">Add to cart</button>
+            <span id="config-name" class="meta">Custom Build — matte, none, #00e0b8/#58a6ff · €40</span>
+          </div>
+        </form>
+      </section>
+      <section>
+        <div class="card" style="padding:1rem;">
+          <h2 style="margin-top:0;">Live Preview</h2>
+          <svg id="preview-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Custom product live preview">
+            <defs>
+              <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+                <stop offset="0%" stop-color="#f6f8fb"/>
+                <stop offset="100%" stop-color="#ffffff"/>
+              </linearGradient>
+            </defs>
+            <rect width="1200" height="800" fill="url(#bg)"/>
+            <g id="panel" opacity="0.10">
+              <rect x="180" y="200" rx="28" ry="28" width="840" height="400" id="shape-primary" fill="#00e0b8"/>
+              <rect x="200" y="225" rx="20" ry="20" width="800" height="350" fill="#ffffff" stroke="#e2e8f0"/>
+              <rect x="200" y="225" rx="20" ry="20" width="800" height="350" id="shape-accent" fill="none" stroke="#58a6ff" stroke-width="3"/>
+            </g>
+            <g id="pattern-stripes" style="display:none;" opacity="0.25"><g transform="translate(200,225)"><g fill="none" stroke="#0b1220" stroke-opacity="0.12"><path d="M0 0 L800 350"/><path d="M0 40 L800 390"/><path d="M0 -40 L800 310"/></g></g></g>
+            <g id="pattern-speckles" style="display:none;" opacity="0.85"><g transform="translate(200,225)" fill="#0b1220" fill-opacity="0.10"><circle cx="60" cy="60" r="3"/><circle cx="140" cy="120" r="2"/><circle cx="320" cy="90" r="2"/><circle cx="600" cy="180" r="3"/><circle cx="700" cy="240" r="2"/></g></g>
+            <text id="engrave-preview" x="50%" y="415" fill="#0b1220" font-family="Segoe UI, Roboto, Arial" font-weight="700" font-size="28" text-anchor="middle"></text>
+            <text x="50%" y="88%" fill="#5b6b82" font-family="Segoe UI, Roboto, Arial" font-size="20" text-anchor="middle">Preview — colours, pattern & engraving are illustrative</text>
+          </svg>
+        </div>
+      </section>
+    </div>
+  </main>
+  
+<footer class="footer">
+  <div class="container">
+    © 2025 Éirelign · All rights reserved.
+    <div style="margin-top:.25rem; font-size:.9rem;">Made with ❤ in Dublin</div>
+  </div>
+</footer>
+
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/configurator.js" defer></script>
+</body>
+</html>

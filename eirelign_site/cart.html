@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Éirelign — Cart</title>
+  <link rel="stylesheet" href="assets/css/styles.css"/>
+</head>
+<body>
+  
+<header class="header compact" role="banner">
+  <div class="container header-inner">
+    <div class="actions">
+      <a href="cart.html" aria-label="View cart">🛒 Cart <span class="badge" data-cart-count>0</span></a>
+    </div>
+    <div class="brand-compact" aria-live="polite">
+      <div class="site-title">Éirelign</div>
+      <small>Dublin, Ireland. Est. 2025</small>
+      <div style="height:.25rem"></div>
+    </div>
+    <nav class="nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="collection.html">Collection</a>
+      <a href="your-way.html">Your Way</a>
+      <a href="tutorial.html">Tutorial</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+  </div>
+</header>
+
+  <main class="section">
+    <div class="container">
+      <h1>Cart</h1>
+      <div id="cart-empty" class="card" style="padding:1rem; display:none;"><p>Your cart is empty.</p><p><a href="collection.html" style="color:var(--brand-2)">Browse the Collection</a> or <a href="your-way.html" style="color:var(--brand-2)">build it Your Way</a>.</p></div>
+      <div id="cart-filled" style="display:none;">
+        <div class="card" style="padding:0; overflow:hidden;">
+          <div style="overflow-x:auto;">
+            <table class="table" aria-describedby="cart-summary">
+              <thead><tr><th>Item</th><th>Price</th><th>Qty</th><th>Total</th><th></th></tr></thead>
+              <tbody id="cart-body"></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="card" style="padding:1rem; margin-top:1rem; display:grid; gap:.5rem; grid-template-columns: 1fr auto; align-items:center;">
+          <div id="cart-summary" class="meta">Taxes and shipping calculated at checkout.</div>
+          <div style="text-align:right;">
+            <div style="font-weight:800; font-size:1.05rem;">Subtotal: <span id="subtotal">€0.00</span></div>
+            <div style="margin-top:.75rem; display:flex; gap:.5rem; justify-content:flex-end;">
+              <a href="collection.html" style="padding:.6rem .9rem; border-radius:10px; border:1px solid var(--line); text-decoration:none;">Continue shopping</a>
+              <button style="padding:.6rem .9rem; border-radius:10px; border:1px solid var(--line); background: var(--brand-2); color:#fff; font-weight:800; cursor:pointer;" onclick="alert('Checkout placeholder — we'll wire this to Stripe/Shopify next.')">Proceed to checkout</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  
+<footer class="footer">
+  <div class="container">
+    © 2025 Éirelign · All rights reserved.
+    <div style="margin-top:.25rem; font-size:.9rem;">Made with ❤ in Dublin</div>
+  </div>
+</footer>
+
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/cart.js" defer></script>
+</body>
+</html>
